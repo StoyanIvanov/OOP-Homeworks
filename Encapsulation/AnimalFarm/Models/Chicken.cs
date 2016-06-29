@@ -4,13 +4,13 @@
 
     public class Chicken
     {
-        public const int MinAge = 0;
-        public const int MaxAge = 15;
+        private const int MinAge = 0;
+        private const int MaxAge = 15;
 
-        protected string name;
-        internal int age;
+        private string name;
+        private int age;
 
-        internal Chicken(string name, int age)
+        public Chicken(string name, int age)
         {
             this.Name = name;
             this.Age = age;
@@ -23,7 +23,7 @@
                 return this.name;
             }
 
-            internal set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -41,7 +41,7 @@
                 return this.age;
             }
 
-            protected set
+            private set
             {
                 if (value < MinAge || value > MaxAge)
                 {
@@ -57,7 +57,7 @@
             return this.CalculateProductPerDay();
         }
 
-        public double CalculateProductPerDay()
+        private double CalculateProductPerDay()
         {
             switch (this.Age)
             {
